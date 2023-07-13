@@ -1,0 +1,115 @@
+@font-face {
+  font-family: Nordin;
+  src: url(./Nordin_Regular.otf);
+}
+
+:root {
+  --font-standard: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  
+  --background-01: #FFFCF2;
+  --background-02: #DDD8D0;
+  --background-03: #81BDEE;
+
+  --font-color-01: #050609;
+}
+
+body {
+  font-family: Nordin, var(--font-standard);
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 4fr 1fr;
+}
+
+header {
+  grid-column: 2 / 5;
+
+  border: 1px solid black;
+}
+
+nav {
+  grid-row: 1 / 4;
+
+  border: 1px solid black;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 2fr 2fr;
+}
+
+nav > ul {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-auto-rows: 35px;
+}
+
+main {
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
+
+  border: 1px solid black;
+}
+
+footer {
+  grid-column: 2 / 5;
+  grid-row: 3;
+
+  border: 1px solid black;
+}
+
+/* General */
+
+header {
+  background: var(--background-01);
+}
+
+main {
+  background-color: var(--background-02);
+}
+
+nav {
+  background-color: var(--background-03);
+  color: var(--font-color-01);
+  font-weight: bold;
+}
+
+.icon_dashboard {
+  width: 35px;
+}
+
+.dashboard_title {
+  font-size: 28px;
+}
+
+.icon_list {
+  width: 25px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+img,
+span,
+li {
+  align-self: center;
+}
+
+li:hover {
+  font-size: 20px;
+}
+
+img {
+  justify-self: center;
+}
+
+footer {
+  background-color: var(--background-01);
+}
