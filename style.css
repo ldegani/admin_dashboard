@@ -13,30 +13,40 @@
   --font-color-01: #050609;
 }
 
-body {
+*:focus {
+  border: none;
+  outline: none;
+}
+
+body,
+html {
   font-family: Nordin, var(--font-standard);
   font-size: 18px;
   letter-spacing: 1px;
+
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 /* GRID */
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-columns: 1.5fr repeat(3, 2fr);
+  grid-template-rows: 1fr 3fr;
 }
 
 header {
   grid-column: 2 / 5;
 
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 nav {
-  grid-row: 1 / 4;
-
-  border: 1px solid black;
+  grid-row: 1 / 3;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -51,22 +61,109 @@ nav > ul {
 
 main {
   grid-column: 2 / 5;
-  grid-row: 2 / 3;
-
-  border: 1px solid black;
+  grid-row: 2;
 }
 
-footer {
+/* footer {
   grid-column: 2 / 5;
   grid-row: 3;
-
-  border: 1px solid black;
-}
+} */
 
 /* General */
 
 header {
   background: var(--background-01);
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.container_search,
+.container_notifications,
+.header_greeting,
+.header_buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.7rem 2.6rem;
+}
+
+.container_notifications {
+  justify-content: space-between;
+  justify-self: flex-end;
+  width: 200px;
+  flex: 0 1 auto;
+}
+
+input[type="search"] {
+  flex-shrink: 1;
+  border: none;
+  background-color: var(--background-02);
+  border-radius: 8px;
+  width: 20rem;
+  min-width: 50px;
+  padding-left: 0.5rem;
+}
+
+.greeting_messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons_header {
+  width: 20px;
+}
+
+.icons_profile {
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+.icons_profile:hover {
+  width: 40px;
+  border: 2px solid var(--font-color-01);
+  border-radius: 50%;
+}
+
+#icon_greeting {
+  width: 60px;
+}
+
+#icon_notification:hover {
+  transform: scale(1.2);
+}
+
+#icon_greeting:hover {
+  border: none;
+}
+
+.profile_name,
+.name_greeting {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.profile_name:hover {
+  border-bottom: 2px solid var(--font-color-01);
+}
+
+.header_buttons {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+button {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+  background-color: var(--background-03);
+}
+
+button:hover {
+  background-color: #4BA1E7;
 }
 
 main {
@@ -94,6 +191,7 @@ nav {
 ul {
   list-style-type: none;
   padding-left: 20px;
+  margin: 0.7rem 0;
 }
 
 img,
@@ -104,6 +202,11 @@ li {
 
 li:hover {
   font-size: 20px;
+}
+
+.greeting_messages > span {
+  align-self: flex-start;
+  text-align: start;
 }
 
 img {
