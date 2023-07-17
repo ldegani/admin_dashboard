@@ -51,7 +51,7 @@ header {
   grid-column: 2;
 
   display: grid;
-  grid-template-columns: minmax(300px, 2fr) 1fr;
+  grid-template-columns: minmax(350px, 2fr) 1fr;
   grid-template-rows: 1fr 1fr;
 }
 
@@ -71,19 +71,32 @@ nav>ul {
 }
 
 main {
-  grid-column: 2 / 5;
+  grid-column: 2 / 3;
   grid-row: 2;
 
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 35px 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+main > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
   gap: 10px;
 }
 
-main>div {
+.one {
+  align-items: flex-start;
+}
+
+.main_cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-rows: min-content;
+  gap: 1rem;
 }
 
 /* footer {
@@ -165,6 +178,7 @@ input[type="search"] {
 .name_greeting {
   font-size: 28px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .profile_name:hover {
@@ -194,20 +208,24 @@ button:hover {
 main {
   padding: 0.7rem 2rem;
   background-color: var(--background-02);
+  overflow: auto;
 }
 
 .card {
-  width: 215px;
-  height: 200px;
+  flex: 1 auto;
+  min-width: 325px;
+  width: fit-content;
+  height: fit-content;
   border-radius: 0.3rem;
   border-left: 10px solid var(--background-03);
   background-color: var(--background-01);
   padding: 1.5rem 1rem;
 }
 
-.announcements,
+.cards_announcements,
 .container_users {
   flex-grow: 0;
+  width: 250px;
   background-color: var(--background-01);
   border-radius: 8px;
 }
